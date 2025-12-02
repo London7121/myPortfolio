@@ -1,0 +1,95 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
+@custom-variant 3xl (min-width: 1600px);
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+body[data-theme='dark'] {
+    background-color: #141414;
+    color: white;
+    line-height: 1.6;
+    font-family: 'Manrope', sans-serif;
+}
+
+body[data-theme='light'] {
+    background-color: white;
+    color: black;
+    line-height: 1.6;
+    font-family: 'Manrope', sans-serif;
+
+}
+
+path {
+    transition: fill 0.3s ease;
+    cursor: pointer;
+}
+
+path:hover {
+    opacity: 0.8;
+}
+
+.blocked-user-row {
+    background-color: #f8c6c47d;
+}
+
+.unBlocked-user-row {
+    background-color: #d9fbdd74;
+}
+
+.profile-segmented {
+    margin: 12px 0 20px 0;
+}
+
+.snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+    background: linear-gradient(rgba(8, 86, 163, 0.1), rgba(8, 86, 163, 0.05));
+}
+
+.snowflake {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10px) rotate(0deg);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.snowflake:nth-child(odd) {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.snowflake:nth-child(even) {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.logo-title {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    font-family: cursive !important;
+}
+.logo-title1 {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    font-family: cursive !important;
+}

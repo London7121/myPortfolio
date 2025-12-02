@@ -1,0 +1,61 @@
+/* LogoLoader.css */
+.page-loader-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+@media (prefers-color-scheme: dark) {
+    .page-loader-wrapper {
+        background-color: #000 !important;
+    }
+}
+
+
+.logo-loader-container {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-pulse {
+    width: 68px;
+    height: 68px;
+    animation: pulse 1.5s infinite ease-in-out;
+    z-index: 2;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.rotating-ring {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    animation: rotate 1.5s linear infinite;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}

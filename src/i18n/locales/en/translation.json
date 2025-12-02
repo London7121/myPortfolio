@@ -1,0 +1,33 @@
+{
+    "login": {
+        "title": "Admin Panel",
+        "username": "Username",
+        "password": "Password",
+        "submit": "Login",
+        "password_login": "Login",
+        "usb_login": "USB Token",
+        "useToken": "Login with token",
+        "usb_prompt": "Please connect the USB Token and press the login button.",
+        "usb_not_detected": "USB Token not detected. Please connect the device.",
+        "validation": {
+            "username_required": "Username is required",
+            "password_required": "Password is required"
+        }
+    },
+    "dashboard": {
+        "welcome": "Welcome, {{name}}!",
+        "region": "Region",
+        "district": "District"
+    },
+    "menu": {
+        "home": "Bosh sahifa",
+        "dashboard": "Dashboard",
+        "news": "Yangiliklar",
+        "vacancy": "Vakansiyalar",
+        "statistics": "Statistika",
+        "banner": "Banner",
+        "ads": "Reklamalar",
+        "team": "Jamoa",
+        "partners": "Hamkorlar"
+    }
+}
