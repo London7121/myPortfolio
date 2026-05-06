@@ -42,7 +42,7 @@ const LangSelect = () => {
             suffixIcon={<FaGlobe size={20} />}
             value={currentLang}
             onChange={handleChange}
-            style={{ width: 72 }}
+            style={{ width: 74 }}
             size="large"
         >
             <Option value="uz">UZ</Option>

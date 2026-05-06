@@ -4,47 +4,51 @@ import { Layout, Drawer, Menu, theme, Button } from "antd";
 import { RiMenu4Line } from "react-icons/ri";
 import type { MenuProps } from "antd";
 import ThemeToggle from "../../components/theme/ThemeToogle";
-import { FaGithub } from "react-icons/fa6";
+import LangSelect from "../../components/ui/LangSelect";
+import { useTranslation } from "react-i18next";
+// import { FaGithub } from "react-icons/fa6";
 const { Header } = Layout;
 
 const HeaderPage = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const {
-    token: { colorBgContainer, colorText },
+    token: { colorText, colorBorder },
   } = theme.useToken();
   const [drawerVisible, setDrawerVisible] = useState(false);
 
   const menuItems: MenuProps["items"] = [
-    { key: "/home", label: "Bosh sahifa" },
-    { key: "/home/about", label: "Biz haqimizda" },
-    { key: "/home/skills", label: "Ko'nikmalar" },
-    { key: "/home/experience", label: "Tajriba" },
-    { key: "/home/contact", label: "Bog'lanish" },
-    { key: "https://github.com/London7121", label: "Git Hub", icon: <FaGithub size={20} /> },
+    { key: "/home", label: t("Bosh sahifa") },
+    { key: "/home/about", label: t("Biz haqimizda") },
+    { key: "/home/skills", label: t("Ko'nikmalar") },
+    { key: "/home/experience", label: t("Tajriba") },
+    { key: "/home/projects", label: t("Loyihalar") },
+    { key: "/home/contact", label: t("Bog'lanish") },
+    // { key: "https://github.com/London7121", label: "Git Hub", icon: <FaGithub size={20} /> },
 
     {
       key: "/home/login",
-      label: <Button type="primary">Login</Button>,
+      label: <Button type="primary">{t("Login")}</Button>,
     },
   ];
 
   const onMenuClick: MenuProps["onClick"] = (e) => {
     if (e.key.startsWith("http")) {
-      window.open(e.key, "_blank"); 
+      window.open(e.key, "_blank");
     } else {
       navigate(e.key);
     }
   };
 
-
   return (
     <Header
-      className="bg-white shadow-md sticky top-0 z-50"
+      className="shadow-md sticky top-4 z-50 container mx-auto rounded-3xl dark:border"
       style={{
-        background: colorBgContainer,
+        border: "1px solid" + colorBorder,
         color: colorText,
         height: "80px",
         padding: "0 16px",
+        maxWidth: "1480px",
       }}
     >
       <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 flex justify-between items-center h-16 pt-3">
@@ -63,24 +67,27 @@ const HeaderPage = () => {
             items={menuItems}
             onClick={onMenuClick}
             className="flex items-center gap-6"
-
             style={{
               borderBottom: "none",
+              backgroundColor: "transparent",
             }}
           />
+          <LangSelect />
           <ThemeToggle />
         </div>
 
         {/* Mobile Button */}
         <div className="md:hidden flex items-center space-x-2">
-          <RiMenu4Line className="cursor-pointer hover:text-blue-600" onClick={() => setDrawerVisible(true)} size={32} />
+          <RiMenu4Line
+            className="cursor-pointer hover:text-blue-600"
+            onClick={() => setDrawerVisible(true)}
+            size={32}
+          />
         </div>
 
         {/* Mobile Drawer */}
         <Drawer
-          title={
-            <p className="logo-title1">Kamol Juraev</p>
-          }
+          title={<p className="logo-title1">Kamol Juraev</p>}
           placement="right"
           onClose={() => setDrawerVisible(false)}
           open={drawerVisible}
@@ -97,13 +104,13 @@ const HeaderPage = () => {
             mode="inline"
             style={{ border: "none", backgroundColor: "transparent" }}
           />
-          <div className="mt-4">
+          <div className="mt-4 flex flex-col items-start gap-4 ml-6">
+            <LangSelect />
             <ThemeToggle />
           </div>
         </Drawer>
       </div>
-    </Header >
-
+    </Header>
   );
 };
 

@@ -7,11 +7,13 @@ import {
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import { FaTelegram } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 const { Footer } = Layout;
 const { Title, Text } = Typography;
 
 const AppFooter = () => {
+    const {t} = useTranslation();
     const {
         token: { colorBgContainer, colorText },
     } = theme.useToken();
@@ -32,21 +34,21 @@ const AppFooter = () => {
                     {/* Quick Links */}
                     <Col xs={12} md={6}>
                         <Title level={5} style={{ color: colorText, marginBottom: 16 }}>
-                            Tezkor havolalar
+                            {t("Tezkor havolalar")}
                         </Title>
                         <Space direction="vertical" size={8}>
-                            <Link to="/" style={{ color: colorText }}>Bosh sahifa</Link>
-                            <Link to="/home/experience" style={{ color: colorText }}>Tajriba</Link>
-                            <Link to="/home/skills" style={{ color: colorText }}>Ko'nikma</Link>
-                            <Link to="/home/about" style={{ color: colorText }}>Biz haqimizda</Link>
-                            <Link to="/home/contact" style={{ color: colorText }}>Bog'lanish</Link>
+                            <Link to="/" style={{ color: colorText }}>{t("Bosh sahifa")}</Link>
+                            <Link to="/home/experience" style={{ color: colorText }}>{t("Tajriba")}</Link>
+                            <Link to="/home/skills" style={{ color: colorText }}>{t("Ko'nikmalar")}</Link>
+                            <Link to="/home/about" style={{ color: colorText }}>{t("Biz haqimizda")}</Link>
+                            <Link to="/home/contact" style={{ color: colorText }}>{t("Bog'lanish")}</Link>
                         </Space>
                     </Col>
 
                     {/* Contact */}
                     <Col xs={12} md={6}>
                         <Title level={5} style={{ color: colorText, marginBottom: 16 }}>
-                            Bog'lanish
+                            {t("Bog'lanish")}
                         </Title>
                         <Space direction="vertical" size={8}>
                             <Text style={{ color: colorText }}>kamoljuraev7721@gmail.com</Text>
@@ -59,7 +61,7 @@ const AppFooter = () => {
                     {/* Social */}
                     <Col xs={24} md={6}>
                         <Title level={5} style={{ color: colorText, marginBottom: 16 }}>
-                            Ijtimoiy tarmoqlar
+                            {t("Ijtimoiy tarmoqlar")}
                         </Title>
                         <Space size={18} style={{ fontSize: 22 }}>
                             <a href="https://t.me/kamoljurayev"><FaTelegram style={{ color: colorText }} /></a>
@@ -82,7 +84,7 @@ const AppFooter = () => {
                     }}
                 >
                     <Text style={{ color: colorText, fontSize: 13 }}>
-                        © 2025 KamolJuraev. Barcha huquqlar himoyalangan.
+                        © 2025 KamolJuraev. {t("Barcha huquqlar himoyalangan.")}
                     </Text>
                 </div>
             </div >

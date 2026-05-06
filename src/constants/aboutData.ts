@@ -1,16 +1,16 @@
-import log from '../assets/images/iamkamol.jpg'
-import edu from '../assets/images/myedu.jpg'
-
+import log from "../assets/images/iamkamol.jpg";
+import edu from "../assets/images/myedu.jpg";
 
 export interface AboutItem {
-    title: string;
-    description: string;
-    image: string;
+  title: string;
+  description: string;
+  image: string;
 }
 
 export const aboutData: AboutItem = {
-    title: "Frontend Developer – Yaratishni, Loyihalarni Jonlantirishni Yaxshi Ko‘raman",
-    description: `
+  title:
+    "Frontend Developer – Yaratishni, Loyihalarni Jonlantirishni Yaxshi Ko‘raman",
+  description: `
 Men React.js va TypeScript yo‘nalishida ishlaydigan frontend dasturchiman. 
 4 yillik o‘qish jarayonida (TATU — IT Services Faculty) nafaqat bilim oldim, balki haqiqiy 
 amaliy tajribani ham to‘pladim: real loyihalar, API integratsiyalari, responsive UI/UX 
@@ -28,13 +28,13 @@ Men har doim yangi imkoniyatlarni qidiraman: jamoaviy ishlash, tez o‘rganish, 
 fikrlash va qiyin funksiyalarni yoqimli yechim bilan hal qilish — bu mening kuchli 
 tomonlarimdir.
 `,
-    image: log 
+  image: log,
 };
 
 // O‘qigan joylar
 export const educationData = {
-    university: "Toshkent Axborot Texnologiyalari Universiteti (TATU)",
-    faculty: "IT Services Faculty — Computer Engineering",
-    years: "2021 – 2025",
-    image: edu 
+  university: "Toshkent Axborot Texnologiyalari Universiteti (TATU)",
+  faculty: "IT Services Faculty — Computer Engineering",
+  years: "2021 – 2025",
+  image: edu,
 };

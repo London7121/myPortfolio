@@ -155,7 +155,7 @@ const getErrorDescription = (status: number | string, serverMessage?: string, pa
             case 404: return "So‘ralgan ma’lumot topilmadi"
             case 422: return "Yuborilgan ma’lumotlar noto‘g‘ri"
             case 429: return "Haddan ko‘p so‘rov yuborildi, biroz kuting"
-            case 500: return "Server ichki xatosi, keyinroq qayta urinib ko‘ring"
+            case 500: return "Server xatosi, keyinroq qayta urinib ko‘ring"
             default: return "Kutilmagan xatolik yuz berdi"
         }
     }

@@ -93,3 +93,35 @@ path:hover {
     font-weight: 600 !important;
     font-family: cursive !important;
 }
+
+/* ROOT WRAPPER */
+.app-root {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* BACKGROUND EFFECT */
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none; /* MUHIM */
+}
+
+/* CONTENT ABOVE LIGHT */
+.content-layer {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* PAGE CONTENT */
+.page-content {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+  margin: 20px 0;
+}

@@ -49,7 +49,7 @@ export default function UpdatePhoto({ profile }: { profile: Profile }) {
                 />
 
                 <div
-                    className={`absolute inset-0 w-[295px] h-[295px] flex items-end justify-center rounded-full transition-all duration-300 
+                    className={`absolute inset-0 w-73.75 h-73.75 flex items-end justify-center rounded-full transition-all duration-300 
                         ${hovered ? "bg-black/40 opacity-100" : "opacity-0"}`}
                 >
                     <Tooltip title={t("buttons.edit")}>

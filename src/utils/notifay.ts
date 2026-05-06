@@ -48,7 +48,7 @@ export const notify = {
         message.success(msg);
         if (notificationApi) {
             notificationApi.success({
-                message: msg,
+                title: msg,
                 description: desc,
                 placement: options?.placement || 'topRight',
                 duration: options?.duration || 4.5,
@@ -69,7 +69,7 @@ export const notify = {
         message.error(msg);
         if (notificationApi) {
             notificationApi.error({
-                message: msg,
+                title: msg,
                 description: desc,
                 placement: options?.placement || 'topRight',
                 duration: options?.duration || 4.5,
@@ -90,7 +90,7 @@ export const notify = {
         message.info(msg);
         if (notificationApi) {
             notificationApi.info({
-                message: msg,
+                title: msg,
                 description: desc,
                 placement: options?.placement || 'topRight',
                 duration: options?.duration || 4.5,
@@ -111,7 +111,7 @@ export const notify = {
         message.warning(msg);
         if (notificationApi) {
             notificationApi.warning({
-                message: msg,
+                title: msg,
                 description: desc,
                 placement: options?.placement || 'topRight',
                 duration: options?.duration || 4.5,
@@ -157,9 +157,19 @@ export const notify = {
     }) => {
         if (notificationApi) {
             notificationApi.open({
-                ...config,
+                title: config.message,
+                description: config.description,
+                type: config.type,
                 placement: config.placement || 'topRight',
                 duration: config.duration || 4.5,
+                onClose: config.onClose,
+                onClick: config.onClick,
+                key: config.key,
+                btn: config.btn,
+                className: config.className,
+                style: config.style,
+                role: config.role,
+                icon: config.icon,
             });
         }
     },

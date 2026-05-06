@@ -111,7 +111,6 @@ export const api = createApi({
                 url: '/ads',
                 method: 'POST',
                 body: formData,
-                // headers: { 'Content-Type': 'multipart/form-data' }  <= buni OLIB TASHLANG
             }),
             invalidatesTags: ['ADS'],
         }),
